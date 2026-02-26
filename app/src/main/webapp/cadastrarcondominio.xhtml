@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Cadastro de condominio</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+	<h:form>
+		<h:outputLabel value="Cadastro de Condomínio"></h:outputLabel>
+		<br /><br />
+
+		<h:outputLabel value="Código: " />
+		<h:inputText value="#{condominioControlador.condominio.codigo}" />
+		<br />
+
+		<h:outputLabel value="Nome: " />
+		<h:inputText value="#{condominioControlador.condominio.nome}" />
+		<br /><br />
+
+		<h:commandButton value="Salvar" action="#{condominioControlador.salvar}" />
+		<br /><br />
+
+		<h:dataTable value="#{condominioControlador.listaCondominios}" var="cond">
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				#{cond.codigo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{cond.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+				<h:commandButton value="Excluir" action="#{condominioControlador.excluir(cond)}" />
+			</h:column>
+		</h:dataTable>
+		<hr />
+		<h:commandButton value="Voltar" action="menuprincipal.xhtml" />
+	</h:form>
+</h:body>
+
+</html>
