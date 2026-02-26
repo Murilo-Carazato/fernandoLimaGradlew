@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'jacoco'
     // Plugin Shadow para gerar um fat JAR com todas as dependências
     id 'com.github.johnrengelman.shadow' version '8.1.1'
     // Plugin para empacotar como WAR (para WildFly)
@@ -22,6 +23,10 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter
+    testImplementation 'org.mockito:mockito-core:5.11.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine'
 
     implementation 'com.h2database:h2:2.3.232'
 
@@ -61,3 +66,11 @@ tasks.named('build') {
     dependsOn tasks.named('shadowJar')
 }
 
+jacocoTestReport {
+    dependsOn test
+    reports {
+        html.required = true
+        csv.required = true
+        xml.required = true
+    }
+}
