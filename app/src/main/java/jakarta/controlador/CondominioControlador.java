@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 
 import jakarta.enterprise.context.SessionScoped;
-import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import testeexportarcomgradlew.beans.Condominio;
+import jakarta.beans.Condominio;
 import jakarta.dao.CondominioDao;
+import jakarta.uteis.Util;
 
 @SessionScoped
 @Named
@@ -15,32 +15,58 @@ public class CondominioControlador implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Condominio condominio = new Condominio();
-	
-	private CondominioDao condominioDao = new CondominioDao();
+	private Condominio novoCondominio;
+	private List<Condominio> condominios;
+
+	public void excluir(Condominio c) {
+		CondominioDao dao = new CondominioDao();
+		dao.remover(c);
+		condominios = dao.pesquisar();
+	}
+
+	public String prepararTelaConsulta() {
+		CondominioDao dao = new CondominioDao();
+		condominios = dao.pesquisar();
+		return "consultarcondominio.xhtml";
+	}
 
 	public String prepararTelaCadastro() {
+		novoCondominio = new Condominio();
 		return "cadastrarcondominio.xhtml";
 	}
 
-	public void salvar() {
-		condominioDao.cadastrar(condominio);
-		condominio = new Condominio(); // reset the form
+	public String gravar() {
+		if (!validarDados()) {
+			return null;
+		}
+		CondominioDao dao = new CondominioDao();
+		dao.cadastrar(novoCondominio);
+		new Util().adicionarMensagem("Condomínio cadastrado com sucesso!");
+		return "menuprincipal.xhtml";
 	}
 
-	public void excluir(Condominio c) {
-		condominioDao.remover(c);
+	private boolean validarDados() {
+		CondominioDao dao = new CondominioDao();
+		if (dao.existe(novoCondominio)) {
+			new Util().adicionarMensagem("Condomínio já existente!");
+			return false;
+		}
+		return true;
 	}
 
-	public List<Condominio> getListaCondominios() {
-		return condominioDao.pesquisar();
+	public Condominio getNovoCondominio() {
+		return novoCondominio;
 	}
 
-	public Condominio getCondominio() {
-		return condominio;
+	public void setNovoCondominio(Condominio novoCondominio) {
+		this.novoCondominio = novoCondominio;
 	}
 
-	public void setCondominio(Condominio condominio) {
-		this.condominio = condominio;
+	public List<Condominio> getCondominios() {
+		return condominios;
+	}
+
+	public void setCondominios(List<Condominio> condominios) {
+		this.condominios = condominios;
 	}
 }

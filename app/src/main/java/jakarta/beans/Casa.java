@@ -1,7 +1,8 @@
-package testeexportarcomgradlew.beans;
+package jakarta.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Casa {
 
@@ -9,6 +10,23 @@ public class Casa {
     private String nome;
     private Condominio condominio;
     private List<Morador> moradores = new ArrayList<Morador>();
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Casa other = (Casa) obj;
+        return Objects.equals(codigo, other.codigo);
+    }
     
 
     public void associarMorador(Morador morador) {

@@ -8,37 +8,33 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </h:head>
 <h:body>
-	<h:form>
+	<h:form id="formulario">
 		<h:outputLabel value="Cadastro de Condomínio"></h:outputLabel>
-		<br /><br />
+		<h:messages globalOnly="true"></h:messages>
+		<br></br>
+		<br></br>
 
 		<h:outputLabel value="Código: " />
-		<h:inputText value="#{condominioControlador.condominio.codigo}" />
-		<br />
+		<br></br>
+		<h:inputText id="codigo" value="#{condominioControlador.novoCondominio.codigo}" required="true"
+			requiredMessage="O código deve ser informado" />
+		<h:message for="codigo"></h:message>
+		<br></br>
 
 		<h:outputLabel value="Nome: " />
-		<h:inputText value="#{condominioControlador.condominio.nome}" />
-		<br /><br />
+		<br></br>
+		<h:inputText id="nome" value="#{condominioControlador.novoCondominio.nome}" required="true"
+			requiredMessage="O nome deve ser informado" />
+		<h:message for="nome"></h:message>
+		<br></br>
+		<br></br>
 
-		<h:commandButton value="Salvar" action="#{condominioControlador.salvar}" />
-		<br /><br />
+		<h:commandButton value="Gravar" action="#{condominioControlador.gravar}" />
+		<br></br>
+		<br></br>
 
-		<h:dataTable value="#{condominioControlador.listaCondominios}" var="cond">
-			<h:column>
-				<f:facet name="header">Código</f:facet>
-				#{cond.codigo}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Nome</f:facet>
-				#{cond.nome}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Ações</f:facet>
-				<h:commandButton value="Excluir" action="#{condominioControlador.excluir(cond)}" />
-			</h:column>
-		</h:dataTable>
-		<hr />
-		<h:commandButton value="Voltar" action="menuprincipal.xhtml" />
+		<h:commandButton value="Voltar" immediate="true" action="menuprincipal.xhtml"
+			onclick="return confirm('Deseja cancelar o cadastro?')" />
 	</h:form>
 </h:body>
 
