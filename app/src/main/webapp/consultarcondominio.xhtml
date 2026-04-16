@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
-    <title>Consulta de condominio</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Consulta de Condominios</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </h:head>
 <h:body>
-    <h:form>
-        <h:outputLabel value="Consulta de Condomínio">
-        </h:outputLabel>
-        <br></br>
-        <br></br>
-        <h:dataTable border="1" value="#{condominioControlador.condominios}" var="cond">
-            <h:column id="column1">
-                <f:facet name="header">
-                    <h:outputText value="Código"></h:outputText>
-                </f:facet>
-                <h:outputText value="#{cond.codigo}"></h:outputText>
-            </h:column>
-            <h:column id="column2">
-                <f:facet name="header">
-                    <h:outputText value="Nome"></h:outputText>
-                </f:facet>
-                <h:outputText value="#{cond.nome}"></h:outputText>
-            </h:column>
-            <h:column id="column3">
-                <f:facet name="header">
-                    <h:outputText value="Excluir"></h:outputText>
-                </f:facet>
-                <h:commandButton value="Excluir" action="#{condominioControlador.excluir(cond)}"
-                    onclick="return confirm('Deseja excluir?')">
-                </h:commandButton>
-            </h:column>
-        </h:dataTable>
-        <br></br>
-        <h:commandButton value="Voltar" action="menuprincipal.xhtml">
-        </h:commandButton>
-    </h:form>
+	<h:form>
+		<h:outputLabel value="Consulta de Condominios">
+			</h:outputLabel>
+		<br></br>
+		<br></br>
+		<h:outputText value="NÃO HÁ DADOS CADASTRADOS" rendered="#{empty condominioControlador.condominios}"></h:outputText>
+		<h:dataTable border="1" value="#{condominioControlador.condominios}" var="r" rendered="#{not empty condominioControlador.condominios}">
+			<h:column id="column1">
+				<f:facet name="header">
+					<h:outputText value="Codigo"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{r.id}"></h:outputText>
+			</h:column>
+			<h:column id="column2">
+				<f:facet name="header">
+					<h:outputText value="Nome"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{r.nome}"></h:outputText>
+			</h:column>
+			<h:column id="column3">
+				<f:facet name="header">
+					<h:outputText value="Excluir"></h:outputText>
+				</f:facet>
+				<h:commandButton value="Excluir" 
+					action="#{condominioControlador.excluir(r)}"
+					onclick="return confirm('Deseja excluir?')">
+				</h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<br></br>
+		<h:commandButton value="Voltar" 
+			action="#{condominioControlador.voltar()}">
+			</h:commandButton>
+	</h:form>		
 </h:body>
-
 </html>

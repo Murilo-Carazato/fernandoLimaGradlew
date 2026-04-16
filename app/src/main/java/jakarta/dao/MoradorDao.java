@@ -7,21 +7,21 @@ import jakarta.beans.Morador;
 
 public class MoradorDao {
 
-	private static List<Morador> moradores = new ArrayList<Morador>();
+	private static List<Morador> moradors = new ArrayList<Morador>();
 
-	public boolean existe(Morador m) {
-		return moradores.contains(m);
+	public boolean existe(Morador esp) {
+		return moradors.contains(esp);
 	}
 
-	public void cadastrar(Morador m) {
-		moradores.add(m);
+	public void cadastrar(Morador esp) {
+		moradors.add(esp);
 	}
 
 	public List<Morador> pesquisar() {
-		return moradores;
+		return moradors;
 	}
 
-	public void remover(Morador m) {
-		moradores.remove(m);
+	public void remover(Morador esp) {
+		moradors.remove(esp);
 	}
 }

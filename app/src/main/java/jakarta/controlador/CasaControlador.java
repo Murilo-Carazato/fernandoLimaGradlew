@@ -22,9 +22,9 @@ public class CasaControlador implements Serializable {
 	private List<Condominio> condominios;
 	private Integer idSelecionadoCondominio;
 
-	public void excluir(Casa c) {
+	public void excluir(Casa f) {
 		CasaDao dao = new CasaDao();
-		dao.remover(c);
+		dao.remover(f);
 		casas = dao.pesquisar();
 	}
 
@@ -49,8 +49,8 @@ public class CasaControlador implements Serializable {
 			return null;
 		}
 		CasaDao dao = new CasaDao();
-		Condominio c = new CondominioDao().getCondominio(idSelecionadoCondominio);
-		novaCasa.setCondominio(c);
+		Condominio r = new CondominioDao().getCondominio(idSelecionadoCondominio);
+		novaCasa.setCondominio(r);
 		dao.cadastrar(novaCasa);
 		new Util().adicionarMensagem("Casa cadastrada com sucesso");
 		return "menuprincipal.xhtml";

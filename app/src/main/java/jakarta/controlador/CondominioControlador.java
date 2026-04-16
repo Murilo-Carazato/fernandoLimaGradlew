@@ -3,10 +3,10 @@ package jakarta.controlador;
 import java.io.Serializable;
 import java.util.List;
 
-import jakarta.enterprise.context.SessionScoped;
-import jakarta.inject.Named;
 import jakarta.beans.Condominio;
 import jakarta.dao.CondominioDao;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
 import jakarta.uteis.Util;
 
 @SessionScoped
@@ -18,16 +18,20 @@ public class CondominioControlador implements Serializable {
 	private Condominio novoCondominio;
 	private List<Condominio> condominios;
 
-	public void excluir(Condominio c) {
+	public void excluir(Condominio r) {
 		CondominioDao dao = new CondominioDao();
-		dao.remover(c);
+		dao.remover(r);
 		condominios = dao.pesquisar();
 	}
 
 	public String prepararTelaConsulta() {
 		CondominioDao dao = new CondominioDao();
-		condominios = dao.pesquisar();
+		this.condominios = dao.pesquisar();
 		return "consultarcondominio.xhtml";
+	}
+
+	public String voltar() {
+		return "menuprincipal.xhtml";
 	}
 
 	public String prepararTelaCadastro() {
@@ -41,14 +45,14 @@ public class CondominioControlador implements Serializable {
 		}
 		CondominioDao dao = new CondominioDao();
 		dao.cadastrar(novoCondominio);
-		new Util().adicionarMensagem("Condomínio cadastrado com sucesso!");
+		new Util().adicionarMensagem("Condominio cadastrado com sucesso");
 		return "menuprincipal.xhtml";
 	}
 
 	private boolean validarDados() {
 		CondominioDao dao = new CondominioDao();
 		if (dao.existe(novoCondominio)) {
-			new Util().adicionarMensagem("Condomínio já existente!");
+			new Util().adicionarMensagem("Condominio existente!");
 			return false;
 		}
 		return true;
@@ -64,6 +68,10 @@ public class CondominioControlador implements Serializable {
 
 	public List<Condominio> getCondominios() {
 		return condominios;
+	}
+
+	public boolean getExibirTitulo() {
+		return condominios != null && !condominios.isEmpty();
 	}
 
 	public void setCondominios(List<Condominio> condominios) {

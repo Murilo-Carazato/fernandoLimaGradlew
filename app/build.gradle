@@ -48,7 +48,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'testeexportarcomgradlew.App'
+    mainClass = 'prova1.App'
 }
 
 tasks.named('test') {
@@ -58,7 +58,12 @@ tasks.named('test') {
 
 // Gera o fat JAR como artefato principal de publicação
 tasks.named('shadowJar') {
-    // classifier 'all' é padrão; manter para previsibilidade
+    // Declara explicitamente o Main-Class no MANIFEST.MF
+    // (necessário quando o plugin 'war' também está aplicado, pois pode
+    // impedir a propagação automática do mainClass do plugin 'application')
+    manifest {
+        attributes 'Main-Class': 'prova1.App'
+    }
 }
 
 // Facilita: quando fizer "gradle build", também gerar o shadowJar

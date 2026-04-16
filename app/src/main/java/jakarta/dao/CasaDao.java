@@ -9,28 +9,19 @@ public class CasaDao {
 
 	private static List<Casa> casas = new ArrayList<Casa>();
 
-	public boolean existe(Casa c) {
-		return casas.contains(c);
+	public boolean existe(Casa f) {
+		return casas.contains(f);
 	}
 
-	public Casa getCasa(Integer id) {
-		for (Casa c : casas) {
-			if (c.getCodigo().equals(id)) {
-				return c;
-			}
-		}
-		return null;
-	}
-
-	public void cadastrar(Casa c) {
-		casas.add(c);
+	public void cadastrar(Casa f) {
+		casas.add(f);
 	}
 
 	public List<Casa> pesquisar() {
 		return casas;
 	}
 
-	public void remover(Casa c) {
-		casas.remove(c);
+	public void remover(Casa f) {
+		casas.remove(f);
 	}
 }

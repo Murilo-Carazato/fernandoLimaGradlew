@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-         version="6.0">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+	version="5.0">
 
-  <display-name>app</display-name>
+	<display-name>Teste</display-name>
 
-  <!-- Configuration from User's Project -->
-  <servlet>
-    <servlet-name>Fema</servlet-name>
-    <servlet-class>servlet.api.Fema</servlet-class>
-  </servlet>
+	<context-param>
+		<param-name>jakarta.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
 
-  <servlet-mapping>
-    <servlet-name>Fema</servlet-name>
-    <url-pattern>/Fema</url-pattern>
-  </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>menumodalidade.xhtml</welcome-file>
+	</welcome-file-list>
 
-  <!-- Configuration from Professor's Project (JSF) -->
-  <servlet>
-    <servlet-name>Faces Servlet</servlet-name>
-    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
-  <servlet-mapping>
-    <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>*.xhtml</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
 
-  <welcome-file-list>
-    <welcome-file>menuprincipal.xhtml</welcome-file>
-    <welcome-file>index.html</welcome-file>
-  </welcome-file-list>
+	
 </web-app>
