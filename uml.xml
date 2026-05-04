@@ -1,160 +1,71 @@
 <mxfile host="Electron" version="26.1.1">
-  <diagram name="Diagrama de Estados" id="0">
+  <diagram name="Semáforo" id="semaforo">
     <mxGraphModel dx="1050" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         
-        <!-- DIAGRAMA 4: SEMÁFORO BACKGROUND -->
-        <mxCell id="d4_bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;strokeColor=none;" vertex="1" parent="1">
-          <mxGeometry x="580" y="220" width="247" height="480" as="geometry" />
-        </mxCell>
-
-        <!-- DIAGRAMA 1: NOTAÇÃO BÁSICA -->
-        <mxCell id="d1_initial" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="40" y="80" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d1_initial_label" value="estado inicial" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="15" y="110" width="80" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d1_state1" value="Estado" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#FFF2CC;strokeColor=#D6B656;" parent="1" vertex="1">
-          <mxGeometry x="180" y="70" width="120" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="d1_state2" value="Estado 2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#FFF2CC;strokeColor=#D6B656;" parent="1" vertex="1">
-          <mxGeometry x="450" y="70" width="120" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="d1_final" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="650" y="80" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d1_final_label" value="Final" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="635" y="110" width="60" height="30" as="geometry" />
+        <!-- Estado Inicial -->
+        <mxCell id="initial" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="115" width="30" height="30" as="geometry" />
         </mxCell>
         
-        <mxCell id="d1_t1" value="transição" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d1_initial" target="d1_state1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        <!-- Estado Liberado -->
+        <mxCell id="liberado_container" parent="1" style="fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;rounded=1;absoluteArcSize=1;arcSize=22;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="60" width="180" x="150" y="100" as="geometry"/>
         </mxCell>
-        <mxCell id="d1_t2" value="evento [guarda] /ação" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d1_state1" target="d1_state2">
-          <mxGeometry x="-0.0667" y="10" width="50" height="50" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="d1_t2_extra" value="Transição externa" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2" vertex="1" parent="1">
-          <mxGeometry x="320" y="40" width="110" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d1_t3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d1_state2" target="d1_final">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- DIAGRAMA 2: CICLO DE VIDA DO LIVRO -->
-        <mxCell id="d2_initial" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="40" y="240" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d2_initial_label" value="Initial" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="25" y="270" width="60" height="30" as="geometry" />
-        </mxCell>
-        
-        <!-- Disponível -->
-        <mxCell id="d2_disp_container" parent="1" style="fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;rounded=1;absoluteArcSize=1;arcSize=22;fillColor=#FFF2CC;strokeColor=#D6B656;" value="" vertex="1">
-          <mxGeometry height="60" width="220" x="160" y="225" as="geometry"/>
-        </mxCell>
-        <mxCell id="d2_disp_name" parent="d2_disp_container" style="html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1" value="Disponível" vertex="1">
-          <mxGeometry height="20" width="220" as="geometry"/>
-        </mxCell>
-        <mxCell id="d2_disp_line" parent="d2_disp_container" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry height="8" width="220" y="20" as="geometry"/>
-        </mxCell>
-        <mxCell id="d2_disp_entry" parent="d2_disp_container" style="html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;" value="+  entry / NotificarInteressados" vertex="1">
-          <mxGeometry height="32" width="220" y="28" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="d2_emprestado" value="Emprestado" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#FFF2CC;strokeColor=#D6B656;" parent="1" vertex="1">
-          <mxGeometry x="200" y="400" width="140" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="d2_reparo" value="Em reparo" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#FFF2CC;strokeColor=#D6B656;" parent="1" vertex="1">
-          <mxGeometry x="500" y="225" width="120" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="d2_final" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="255" y="550" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d2_final_label" value="Final" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="240" y="580" width="60" height="30" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="d2_t1" value="comprado" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_initial" target="d2_disp_container">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d2_t2" value="emprestado" style="endArrow=classic;html=1;rounded=0;exitX=0.364;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="d2_disp_container" target="d2_emprestado">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d2_t3" value="devolvido" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.636;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="d2_emprestado" target="d2_disp_container">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d2_t4" value="colocado em reparo" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_disp_container" target="d2_reparo">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d2_t5" value="reparado" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_reparo" target="d2_disp_container">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d2_t6" value="retirado do acervo" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d2_emprestado" target="d2_final">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-
-        <!-- DIAGRAMA 3: ESTADOS DA IMPRESSORA -->
-        <mxCell id="d3_initial" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="40" y="750" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d3_initial_label" value="Initial" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="25" y="780" width="60" height="30" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="d3_ociosa" value="Impressora ociosa" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="180" y="700" width="160" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="d3_imprimindo" value="Imprimindo" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="500" y="700" width="160" height="100" as="geometry" />
-        </mxCell>
-        
-        <!-- Sem papel -->
-        <mxCell id="d3_sempapel_container" parent="1" style="fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;rounded=1;absoluteArcSize=1;arcSize=22;fillColor=#FFF2CC;strokeColor=#D6B656;" value="" vertex="1">
-          <mxGeometry height="80" width="180" x="170" y="900" as="geometry"/>
-        </mxCell>
-        <mxCell id="d3_sempapel_name" parent="d3_sempapel_container" style="html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1" value="Sem papel" vertex="1">
+        <mxCell id="liberado_name" parent="liberado_container" style="html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1" value="Liberado" vertex="1">
           <mxGeometry height="20" width="180" as="geometry"/>
         </mxCell>
-        <mxCell id="d3_sempapel_line" parent="d3_sempapel_container" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+        <mxCell id="liberado_line" parent="liberado_container" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
           <mxGeometry height="8" width="180" y="20" as="geometry"/>
         </mxCell>
-        <mxCell id="d3_sempapel_do" parent="d3_sempapel_container" style="html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;" value="+  do / beep(tempo)" vertex="1">
-          <mxGeometry height="52" width="180" y="28" as="geometry"/>
+        <mxCell id="liberado_entry" parent="liberado_container" style="html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;" value="+ entry / LigarVerde" vertex="1">
+          <mxGeometry height="32" width="180" y="28" as="geometry"/>
         </mxCell>
 
-        <mxCell id="d3_t1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d3_initial" target="d3_ociosa">
+        <!-- Estado Atenção -->
+        <mxCell id="atencao_container" parent="1" style="fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;rounded=1;absoluteArcSize=1;arcSize=22;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="60" width="180" x="450" y="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="atencao_name" parent="atencao_container" style="html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1" value="Atenção" vertex="1">
+          <mxGeometry height="20" width="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="atencao_line" parent="atencao_container" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="180" y="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="atencao_entry" parent="atencao_container" style="html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;" value="+ entry / LigarAmarelo" vertex="1">
+          <mxGeometry height="32" width="180" y="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Estado Pare -->
+        <mxCell id="pare_container" parent="1" style="fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;marginBottom=0;rounded=1;absoluteArcSize=1;arcSize=22;fillColor=#f8cecc;strokeColor=#b85450;" value="" vertex="1">
+          <mxGeometry height="60" width="180" x="300" y="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="pare_name" parent="pare_container" style="html=1;align=center;spacing=0;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;fontStyle=1" value="Pare" vertex="1">
+          <mxGeometry height="20" width="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="pare_line" parent="pare_container" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="180" y="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="pare_entry" parent="pare_container" style="html=1;align=left;spacing=0;spacingLeft=10;verticalAlign=middle;strokeColor=none;fillColor=none;whiteSpace=wrap;" value="+ entry / LigarVermelho" vertex="1">
+          <mxGeometry height="32" width="180" y="28" as="geometry"/>
+        </mxCell>
+
+        <!-- Transições -->
+        <mxCell id="t1" value="ligar" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="initial" target="liberado_container">
           <mxGeometry width="50" height="50" relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="d3_t2" value="impressão iniciada" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="d3_ociosa" target="d3_imprimindo">
+        <mxCell id="t2" value="após alguns segundos" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="liberado_container" target="atencao_container">
           <mxGeometry width="50" height="50" relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="d3_t3" value="fim impressão" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d3_imprimindo" target="d3_ociosa">
+        <mxCell id="t3" value="após alguns segundos" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="atencao_container" target="pare_container">
           <mxGeometry width="50" height="50" relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="d3_t4" value="impressão cancelada" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="d3_imprimindo" target="d3_ociosa">
+        <mxCell id="t4" value="após alguns segundos" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="pare_container" target="liberado_container">
           <mxGeometry width="50" height="50" relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="d3_t5" value="falta de papel" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="d3_imprimindo" target="d3_sempapel_container">
-          <mxGeometry x="-0.7059" y="10" width="50" height="50" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="d3_t6" value="impressão cancelada" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;exitPerimeter=0;" edge="1" parent="1" source="d3_sempapel_container" target="d3_ociosa">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d3_t7" value="papel colocado" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="d3_sempapel_container" target="d3_imprimindo">
-          <mxGeometry x="-0.3333" y="-10" width="50" height="50" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
