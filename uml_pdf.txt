@@ -1,0 +1,57 @@
+Introdução
+• Uma máquina de estados especifica as
+sequencias de estados pelas quais um objeto
+passa durante seu tempo de vida.
+• Um estado é uma condição ou situação na vida
+de um objeto durante a qual ele satisfaz alguma
+condição, realiza alguma atividade ou aguarda
+um evento.
+• A UML fornece uma representação gráfica de
+estados, transições, eventos e ações para
+representar um objeto durante seu ciclo de vida.Conceitos
+Estado
+É a situação na qual se encontra o objeto. Ao longo da sua vida, um objeto é
+criado no estado inicial, passa por estados intermediários e morre no estado final.
+Transições
+Relacionamento entre dois estados, indicando que um objeto no primeiro estado
+realizará certas ações e entrará no segundo estado.
+Evento
+Algo que ocorre de forma instantânea no tempo e pode ocasionar uma transição
+de estado em um objeto.
+Ação
+Algo executado de forma imediata e atômica. O tempo de execução é muito
+pequeno e a ação não pode ser interrompida.
+Atividade
+Similar a uma ação, porém pode ser interrompida.
+Condição de guarda
+Expressão lógica que deve ser verdadeira na ocorrência do evento para que a
+transição ocorra.Notação
+O Diagrama de estados é um grafo dirigido onde
+um nó é representado por um retângulo com
+cantos arredondados contendo o nome do estado
+e também por setas que indicam uma transição de
+[imagem 1]
+estado:Ação nos estados – entry
+[imagem 2]
+•Ações podem ser representadas nos eventos ou nos estados.
+•Normalmente, a representação nos estados permite simplificar o diagrama.
+•Toda vez que o Livro passar ao estado “Disponível” a ação de
+“NotificarInteressados” será executada.Ação nos estados – do
+[imagem 3]
+•Uma atividade pode ser interrompida ou terminar por si só.
+•Um atividade está sempre associada a um estado por meio da palavra-chave
+do.
+•Por exemplo, a atividade beep será executada toda vez que a impressora
+estiver sem papel.
+•Esta atividade pode ser interrompida a qualquer momento pela ocorrência do
+evento impressão cancelada ou papel colocado.Exercício 1
+●
+●
+Elabore o diagrama de estados para o contexto de um semáfaro de
+trânsito. Quando ligado, ele entra no estado de Liberado e após
+alguns segundos, passa para o estado de Atenção. Após alguns
+segundos no estado de Atenção ele passa para o estado de Pare e
+em seguida, após mais alguns segundos, retorna para o estado de
+Liberado.
+Apenas para lembrar, a cada mudança de estado um cor de luz
+diferente é acessa.
