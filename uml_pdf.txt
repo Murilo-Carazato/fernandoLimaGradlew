@@ -1,15 +1,19 @@
-O setor de departamento pessoal da FEMA, em parceria com as
-empresas da região, disponibiliza em seu site vagas para
-estagiários em diversas áreas. Basicamente o ciclo de vida de uma
-vaga é o seguinte:
-● Quando cadastrada no site pela instituição, naturalmente a vaga
-entra no estado de “Aberta”. Uma vez aberta, um aluno pode ocupála, fazendo com que ela entre no estado de “Ocupada”. Porém,
-antes de ser ocupada por um aluno, a própria empresa pode
-solicitar o seu fechamento por razões próprias, fazendo então com
-que a vaga entre para o estado de “Finalizada pela empresa”.
-● Também deve ser considerada a possibilidade do próprio setor de
-departamento pessoal da instituição finalizar esta vaga em razão de
-divergências quanto às atividades que serão exercidas pelo
-estudante, fazendo com que a vaga então, entre para o estado de
-“Finalizada pela instituição”.
-● Com base na descrição acima, implemente o diagrama de estados.
+Elabore o diagrama de estados para o contexto de uma mesa de
+restaurante, que assume o seguinte fluxo:
+● Inicialmente a mesa está no estado Disponível. Quando clientes
+ocupam essa mesa então ela passa para o estado de Ocupada.
+● Quando os clientes pedem para o garçom fechar a conta da mesa,
+ela entra no estado Fechada, sendo que ao entrar nesse estado, o
+sistema deve emitir o extrato de consumo da mesa que deverá ser
+apresentado para o cliente. Vale ressaltar que mesmo estando com
+a conta fechada, o cliente pode voltar a consumir na mesa fazendo
+com que ela, naturalmente, volte para o estado de Ocupada.
+● Quando o cliente realiza o pagamento da conta, a mesa entra no
+estado de Aguardando Liberação, visto que os clientes podem
+permanecer sentados na mesma mesmo após realizar o pagamento
+da conta.
+● Ainda nessa situação, com a conta da mesa paga, o cliente pode
+voltar a consumir, colocando a mesa novamente no estado de
+Ocupada, porém, o normal é que após algum tempo após pagar a
+conta, o cliente vá embora fazendo com que a mesa volte para o
+estado de Disponível.
