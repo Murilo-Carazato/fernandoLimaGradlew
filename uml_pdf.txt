@@ -1,19 +1,21 @@
-Elabore o diagrama de estados para o contexto de uma mesa de
-restaurante, que assume o seguinte fluxo:
-● Inicialmente a mesa está no estado Disponível. Quando clientes
-ocupam essa mesa então ela passa para o estado de Ocupada.
-● Quando os clientes pedem para o garçom fechar a conta da mesa,
-ela entra no estado Fechada, sendo que ao entrar nesse estado, o
-sistema deve emitir o extrato de consumo da mesa que deverá ser
-apresentado para o cliente. Vale ressaltar que mesmo estando com
-a conta fechada, o cliente pode voltar a consumir na mesa fazendo
-com que ela, naturalmente, volte para o estado de Ocupada.
-● Quando o cliente realiza o pagamento da conta, a mesa entra no
-estado de Aguardando Liberação, visto que os clientes podem
-permanecer sentados na mesma mesmo após realizar o pagamento
-da conta.
-● Ainda nessa situação, com a conta da mesa paga, o cliente pode
-voltar a consumir, colocando a mesa novamente no estado de
-Ocupada, porém, o normal é que após algum tempo após pagar a
-conta, o cliente vá embora fazendo com que a mesa volte para o
-estado de Disponível.
+Exercício 1
+A empresa “Info Norte”, especializada na manutenção de equipamentos de
+informática, deseja implementar um software para fazer exclusivamente o
+controle de seus clientes cadastrados bem como de seu contas a receber.
+De acordo com os detalhes identificados na primeira reunião, a empresa
+gostaria de ter um tela para cadastro de clientes bem completa, onde ela
+pudesse informar os dados cadastrais do cliente, endereço de contato,
+endereço de cobrança dentre outras informações como limite de crédito e
+prazo máximo para pagamento. Após o cliente ter sido cadastrado, é
+necessário que o software disponibilize ao usuário uma tela onde ele possa
+realizar, de forma individual, o cadastro de cada uma das contas a receber do
+cliente.
+O cadastro de uma conta a receber, basicamente pede o cliente, a data de
+emissão, data de vencimento e o valor da conta. Também é necessário que o
+software disponibilize ao usuário uma tela por onde ele possa realizar a baixa
+das contas recebidas de acordo com os pagamentos realizados pelos
+clientes.
+Foi identificado ainda a necessidade de um relatório de contas a receber por
+período e cidade.
+De acordo com a especificação apresentada, elabore um diagrama de
+classes que contemple as necessidades apresentadas pela empresa.

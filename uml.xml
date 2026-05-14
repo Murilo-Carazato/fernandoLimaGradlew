@@ -1,69 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="Electron" version="26.1.1">
-  <diagram name="Mesa de Restaurante" id="mesa_restaurante">
+  <diagram name="Diagrama de Classes" id="diagrama_classes">
     <mxGraphModel dx="1050" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        
-        <!-- Estado Inicial -->
-        <mxCell id="initial" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="40" y="80" width="30" height="30" as="geometry" />
-        </mxCell>
-        
-        <!-- Estado Disponível -->
-        <mxCell id="disponivel" value="Disponível" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="150" y="65" width="120" height="60" as="geometry" />
+
+        <!-- Classes -->
+        <mxCell id="cliente" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cliente&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nome: String&lt;br&gt;- limiteCredito: Double&lt;br&gt;- prazoMaximoPagamento: Integer&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ atualizar()&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="230" height="140" as="geometry" />
         </mxCell>
 
-        <!-- Estado Ocupada -->
-        <mxCell id="ocupada" value="Ocupada" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="380" y="65" width="120" height="60" as="geometry" />
+        <mxCell id="conta" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ContaReceber&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- dataEmissao: Date&lt;br&gt;- dataVencimento: Date&lt;br&gt;- valor: Double&lt;br&gt;- dataPagamento: Date&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ realizarBaixa()&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="480" y="80" width="200" height="150" as="geometry" />
         </mxCell>
 
-        <!-- Estado Fechada -->
-        <mxCell id="fechada" value="&lt;b&gt;Fechada&lt;/b&gt;&lt;hr&gt;entry / emitir extrato de consumo" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;verticalAlign=top;spacingTop=5;" parent="1" vertex="1">
-          <mxGeometry x="610" y="55" width="200" height="80" as="geometry" />
+        <mxCell id="endereco" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Endereco&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- logradouro: String&lt;br&gt;- numero: String&lt;br&gt;- bairro: String&lt;br&gt;- cep: String&lt;br&gt;- tipo: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ atualizar()&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="95" y="320" width="200" height="170" as="geometry" />
         </mxCell>
 
-        <!-- Estado Aguardando Liberação -->
-        <mxCell id="aguardando" value="Aguardando Liberação" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="610" y="240" width="200" height="60" as="geometry" />
+        <mxCell id="cidade" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cidade&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nome: String&lt;br&gt;- uf: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ consultar()&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="480" y="320" width="180" height="120" as="geometry" />
         </mxCell>
 
-        <!-- Transições -->
-        <mxCell id="t_init" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="initial" target="disponivel">
+        <!-- Relacionamento: Cliente - ContaReceber -->
+        <!-- Associação Bidirecional -->
+        <mxCell id="rel_cliente_conta" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cliente" target="conta">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <mxCell id="t_disp_ocup" value="clientes ocupam a mesa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="disponivel" target="ocupada">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="rel_cliente_conta_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel_cliente_conta">
+          <mxGeometry x="-0.8" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        
-        <mxCell id="t_ocup_fech" value="pedir para fechar a conta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="ocupada" target="fechada">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-
-        <mxCell id="t_fech_ocup" value="voltar a consumir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="fechada" target="ocupada">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-
-        <mxCell id="t_fech_aguardando" value="realiza pagamento da conta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fechada" target="aguardando">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-
-        <mxCell id="t_aguardando_ocup" value="voltar a consumir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="aguardando" target="ocupada">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="440" y="270" />
-            </Array>
+        <mxCell id="rel_cliente_conta_N" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel_cliente_conta">
+          <mxGeometry x="0.8" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="t_aguardando_disp" value="cliente vai embora" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="aguardando" target="disponivel">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="210" y="285" />
-            </Array>
+        <!-- Relacionamento: Cliente - Endereco -->
+        <!-- Composição Unidirecional (Cliente tem Endereços) -->
+        <mxCell id="rel_cliente_endereco" value="" style="endArrow=open;html=1;endFill=0;rounded=0;startArrow=diamondThin;startFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cliente" target="endereco">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_cliente_endereco_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel_cliente_endereco">
+          <mxGeometry x="-0.8" y="15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_cliente_endereco_N" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel_cliente_endereco">
+          <mxGeometry x="0.8" y="15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Relacionamento: Endereco - Cidade -->
+        <!-- Associação Unidirecional (Endereco conhece Cidade) -->
+        <mxCell id="rel_endereco_cidade" value="" style="endArrow=open;html=1;endFill=0;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="endereco" target="cidade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_endereco_cidade_N" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel_endereco_cidade">
+          <mxGeometry x="-0.8" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_endereco_cidade_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel_endereco_cidade">
+          <mxGeometry x="0.8" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
 
