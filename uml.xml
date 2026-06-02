@@ -1,30 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net">
-  <diagram name="Vaga de Estágio" id="vaga_estagio">
-    <mxGraphModel dx="148" dy="528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram name="Diagrama de Classes" id="assis_net">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="yOrCn09AKZAoTNP9GudK-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cliente&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nome: String&lt;br&gt;- limiteCredito: Double&lt;br&gt;- prazoMaximoPagamento: Integer&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ atualizar()&lt;/p&gt;" vertex="1">
-          <mxGeometry height="140" width="230" x="1083" y="439" as="geometry" />
+        
+        <!-- Cliente -->
+        <mxCell id="cliente" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cliente&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- nome: String&lt;br&gt;- telefone: String&lt;br&gt;- endereco: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ consultar()&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="400" y="200" width="180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="yOrCn09AKZAoTNP9GudK-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ContaReceber&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- dataEmissao: Date&lt;br&gt;- dataVencimento: Date&lt;br&gt;- valor: Double&lt;br&gt;- dataPagamento: Date&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ realizarBaixa()&lt;/p&gt;" vertex="1">
-          <mxGeometry height="150" width="200" x="1483" y="439" as="geometry" />
+        
+        <!-- ClientePessoaFisica -->
+        <mxCell id="pf" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClientePessoaFisica&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- cpf: String&lt;br&gt;- rg: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="200" y="440" width="160" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="yOrCn09AKZAoTNP9GudK-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cidade&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nome: String&lt;br&gt;- uf: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ consultar()&lt;/p&gt;" vertex="1">
-          <mxGeometry height="120" width="180" x="1483" y="679" as="geometry" />
+        
+        <!-- ClientePessoaJuridica -->
+        <mxCell id="pj" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClientePessoaJuridica&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- cnpj: String&lt;br&gt;- inscricaoEstadual: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="410" y="440" width="160" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="yOrCn09AKZAoTNP9GudK-8" edge="1" parent="1" source="yOrCn09AKZAoTNP9GudK-2" style="endArrow=none;html=1;endFill=0;rounded=0;startArrow=diamondThin;startFill=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="yOrCn09AKZAoTNP9GudK-1" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1200" y="579" as="sourcePoint" />
-            <mxPoint x="1198" y="679" as="targetPoint" />
+        
+        <!-- ClienteProdutorRural -->
+        <mxCell id="pr" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClienteProdutorRural&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- inscricaoProdutor: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="620" y="440" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Plano -->
+        <mxCell id="plano" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Plano&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- nome: String&lt;br&gt;- velocidade: String&lt;br&gt;- valorAssinatura: Double&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ consultar()&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="100" y="215" width="180" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- ChamadoAtendimento -->
+        <mxCell id="chamado" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ChamadoAtendimento&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- dataHoraRegistro: DateTime&lt;br&gt;- dificuldadeRelatada: String&lt;br&gt;- procedimentoRealizado: String&lt;br&gt;- status: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ registrarChamado()&lt;br&gt;+ registrarResposta()&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="700" y="195" width="200" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- Inheritance: ClientePessoaFisica -> Cliente -->
+        <mxCell id="pf_heranca" style="endArrow=block;html=1;endFill=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pf" target="cliente">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Inheritance: ClientePessoaJuridica -> Cliente -->
+        <mxCell id="pj_heranca" style="endArrow=block;html=1;endFill=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pj" target="cliente">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Inheritance: ClienteProdutorRural -> Cliente -->
+        <mxCell id="pr_heranca" style="endArrow=block;html=1;endFill=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pr" target="cliente">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Association: Plano -> Cliente -->
+        <mxCell id="plano_cliente" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="plano" target="cliente">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="plano_cliente_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="plano_cliente">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yOrCn09AKZAoTNP9GudK-11" edge="1" parent="1" source="yOrCn09AKZAoTNP9GudK-1" style="endArrow=ERone;html=1;endFill=0;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="yOrCn09AKZAoTNP9GudK-4" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1298" y="764" as="sourcePoint" />
+        <mxCell id="plano_cliente_n" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="plano_cliente">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
+        
+        <!-- Association: Cliente -> ChamadoAtendimento -->
+        <mxCell id="cliente_chamado" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cliente" target="chamado">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cliente_chamado_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cliente_chamado">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cliente_chamado_n" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cliente_chamado">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
       </root>
     </mxGraphModel>
   </diagram>

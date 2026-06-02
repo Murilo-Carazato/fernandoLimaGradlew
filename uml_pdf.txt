@@ -1,21 +1,16 @@
-Exercício 1
-A empresa “Info Norte”, especializada na manutenção de equipamentos de
-informática, deseja implementar um software para fazer exclusivamente o
-controle de seus clientes cadastrados bem como de seu contas a receber.
-De acordo com os detalhes identificados na primeira reunião, a empresa
-gostaria de ter um tela para cadastro de clientes bem completa, onde ela
-pudesse informar os dados cadastrais do cliente, endereço de contato,
-endereço de cobrança dentre outras informações como limite de crédito e
-prazo máximo para pagamento. Após o cliente ter sido cadastrado, é
-necessário que o software disponibilize ao usuário uma tela onde ele possa
-realizar, de forma individual, o cadastro de cada uma das contas a receber do
-cliente.
-O cadastro de uma conta a receber, basicamente pede o cliente, a data de
-emissão, data de vencimento e o valor da conta. Também é necessário que o
-software disponibilize ao usuário uma tela por onde ele possa realizar a baixa
-das contas recebidas de acordo com os pagamentos realizados pelos
-clientes.
-Foi identificado ainda a necessidade de um relatório de contas a receber por
-período e cidade.
-De acordo com a especificação apresentada, elabore um diagrama de
-classes que contemple as necessidades apresentadas pela empresa.
+Exercício 3
+A loja “Musica S/A”, especializada na venda de CDs antigos, deseja
+implementar um software para fazer o controle de suas vendas.
+De acordo com o gerente da loja, cada disco deverá ser cadastrado
+individualmente, permitindo ao usuário relacioná-lo com seu gênero e
+respectivo artista. O software deverá ainda disponibilizar uma tela para
+cadastro de clientes que além dos dados básicos, deve ainda permitir que o
+usuário relacione o gênero e artista preferido do cliente, caso existam.
+Além dos cadastros iniciais descritos anteriormente, o software deverá
+disponibilizar uma tela para cadastrar as vendas onde basicamente, o usuário
+deverá relacionar o cliente, o vendedor e os discos que o cliente está
+comprando.
+Em questão de relatórios, o software deverá disponibilizar para o usuário um
+relatório de clientes por gênero, clientes por artista e vendas por período.
+Com base na descrição apresentada, implemente um diagrama de classes
+que contemple as necessidades da loja.
