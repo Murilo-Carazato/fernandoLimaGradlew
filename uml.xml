@@ -1,86 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net">
-  <diagram name="Diagrama de Classes" id="assis_net">
+  <diagram name="Musica SA" id="musica_sa">
     <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        
+
+        <!-- Genero -->
+        <mxCell id="genero" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Genero&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- descricao: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="160" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Artista -->
+        <mxCell id="artista" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Artista&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- nome: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="500" y="250" width="160" height="90" as="geometry" />
+        </mxCell>
+
         <!-- Cliente -->
-        <mxCell id="cliente" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cliente&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- nome: String&lt;br&gt;- telefone: String&lt;br&gt;- endereco: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ consultar()&lt;/p&gt;" vertex="1" parent="1">
-          <mxGeometry x="400" y="200" width="180" height="150" as="geometry" />
+        <mxCell id="cliente" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cliente&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- nome: String&lt;br&gt;- telefone: String&lt;br&gt;- email: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ emitirRelatorioPorGenero()&lt;br&gt;+ emitirRelatorioPorArtista()&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="300" y="50" width="180" height="130" as="geometry" />
         </mxCell>
+
+        <!-- Disco -->
+        <mxCell id="disco" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Disco&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- titulo: String&lt;br&gt;- preco: Double&lt;br&gt;- ano: Integer&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="300" y="450" width="160" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Vendedor -->
+        <mxCell id="vendedor" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Vendedor&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- nome: String&lt;br&gt;- matricula: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="700" y="450" width="160" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Venda -->
+        <mxCell id="venda" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Venda&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- dataVenda: Date&lt;br&gt;- valorTotal: Double&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ registrarVenda()&lt;br&gt;+ emitirRelatorioPorPeriodo()&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="500" y="650" width="180" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ItemVenda -->
+        <mxCell id="item_venda" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ItemVenda&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- quantidade: Integer&lt;br&gt;- valorUnitario: Double&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
+          <mxGeometry x="300" y="650" width="160" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Associações -->
         
-        <!-- ClientePessoaFisica -->
-        <mxCell id="pf" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClientePessoaFisica&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- cpf: String&lt;br&gt;- rg: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
-          <mxGeometry x="200" y="440" width="160" height="90" as="geometry" />
+        <!-- Cliente -> Genero -->
+        <mxCell id="cli_gen" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cliente" target="genero">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <!-- ClientePessoaJuridica -->
-        <mxCell id="pj" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClientePessoaJuridica&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- cnpj: String&lt;br&gt;- inscricaoEstadual: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
-          <mxGeometry x="410" y="440" width="160" height="90" as="geometry" />
-        </mxCell>
-        
-        <!-- ClienteProdutorRural -->
-        <mxCell id="pr" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ClienteProdutorRural&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- inscricaoProdutor: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" vertex="1" parent="1">
-          <mxGeometry x="620" y="440" width="160" height="80" as="geometry" />
-        </mxCell>
-        
-        <!-- Plano -->
-        <mxCell id="plano" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Plano&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- nome: String&lt;br&gt;- velocidade: String&lt;br&gt;- valorAssinatura: Double&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cadastrar()&lt;br&gt;+ consultar()&lt;/p&gt;" vertex="1" parent="1">
-          <mxGeometry x="100" y="215" width="180" height="120" as="geometry" />
-        </mxCell>
-        
-        <!-- ChamadoAtendimento -->
-        <mxCell id="chamado" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=left;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ChamadoAtendimento&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: Integer&lt;br&gt;- dataHoraRegistro: DateTime&lt;br&gt;- dificuldadeRelatada: String&lt;br&gt;- procedimentoRealizado: String&lt;br&gt;- status: String&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ registrarChamado()&lt;br&gt;+ registrarResposta()&lt;/p&gt;" vertex="1" parent="1">
-          <mxGeometry x="700" y="195" width="200" height="160" as="geometry" />
-        </mxCell>
-        
-        <!-- Inheritance: ClientePessoaFisica -> Cliente -->
-        <mxCell id="pf_heranca" style="endArrow=block;html=1;endFill=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pf" target="cliente">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        
-        <!-- Inheritance: ClientePessoaJuridica -> Cliente -->
-        <mxCell id="pj_heranca" style="endArrow=block;html=1;endFill=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pj" target="cliente">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        
-        <!-- Inheritance: ClienteProdutorRural -> Cliente -->
-        <mxCell id="pr_heranca" style="endArrow=block;html=1;endFill=0;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pr" target="cliente">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        
-        <!-- Association: Plano -> Cliente -->
-        <mxCell id="plano_cliente" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="plano" target="cliente">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="plano_cliente_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="plano_cliente">
+        <mxCell id="cli_gen_1" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cli_gen">
           <mxGeometry x="-0.8" relative="1" as="geometry">
             <mxPoint y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="plano_cliente_n" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="plano_cliente">
+        <mxCell id="cli_gen_2" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cli_gen">
           <mxGeometry x="0.8" relative="1" as="geometry">
-            <mxPoint y="-10" as="offset" />
+            <mxPoint x="-10" y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
         
-        <!-- Association: Cliente -> ChamadoAtendimento -->
-        <mxCell id="cliente_chamado" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="cliente" target="chamado">
-          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        <!-- Cliente -> Artista -->
+        <mxCell id="cli_art" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cliente" target="artista">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cliente_chamado_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cliente_chamado">
+        <mxCell id="cli_art_1" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cli_art">
           <mxGeometry x="-0.8" relative="1" as="geometry">
             <mxPoint y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cliente_chamado_n" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cliente_chamado">
+        <mxCell id="cli_art_2" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="cli_art">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Disco -> Genero -->
+        <mxCell id="dis_gen" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="disco" target="genero">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dis_gen_1" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="dis_gen">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dis_gen_2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="dis_gen">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="-10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Disco -> Artista -->
+        <mxCell id="dis_art" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="disco" target="artista">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dis_art_1" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="dis_art">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dis_art_2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="dis_art">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Venda -> Cliente -->
+        <mxCell id="ven_cli" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="venda" target="cliente">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ven_cli_1" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ven_cli">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ven_cli_2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ven_cli">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Venda -> Vendedor -->
+        <mxCell id="ven_vnd" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="venda" target="vendedor">
+          <mxGeometry relative="1" as="geometry">
+             <Array as="points">
+              <mxPoint x="780" y="715" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ven_vnd_1" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ven_vnd">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ven_vnd_2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ven_vnd">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Venda -> ItemVenda -->
+        <mxCell id="ven_itv" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="venda" target="item_venda">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ven_itv_1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ven_itv">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ven_itv_2" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ven_itv">
           <mxGeometry x="0.8" relative="1" as="geometry">
             <mxPoint y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
-        
+
+        <!-- ItemVenda -> Disco -->
+        <mxCell id="itv_dis" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="item_venda" target="disco">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="itv_dis_1" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="itv_dis">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="itv_dis_2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="itv_dis">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
