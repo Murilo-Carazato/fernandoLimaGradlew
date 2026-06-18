@@ -1,11 +1,16 @@
 package jakarta.dao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.beans.Condominio;
+import jakarta.enterprise.context.Dependent;
 
-public class CondominioDao {
+@Dependent
+public class CondominioDao implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private static List<Condominio> condominios = new ArrayList<Condominio>();
 

@@ -8,6 +8,8 @@ import jakarta.beans.Casa;
 import jakarta.dao.MoradorDao;
 import jakarta.dao.CasaDao;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.event.AjaxBehaviorEvent;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.uteis.Util;
 
@@ -21,15 +23,25 @@ public class MoradorControlador implements Serializable {
 	private List<Morador> moradors;
 	private List<Casa> casas;
 	private Integer idSelecionadoCasa;
+	private String mensagemCasa;
+
+	@Inject
+	private MoradorDao dao;
+
+	@Inject
+	private CasaDao daoCasa;
+
+	public void selecionarCasa(AjaxBehaviorEvent a) {
+		Casa c = daoCasa.getCasa(idSelecionadoCasa);
+		mensagemCasa = "Casa: " + (c != null ? c.getNome() : "");
+	}
 
 	public void excluir(Morador e) {
-		MoradorDao dao = new MoradorDao();
 		dao.remover(e);
 		moradors = dao.pesquisar();
 	}
 
 	public String prepararTelaConsulta() {
-		MoradorDao dao = new MoradorDao();
 		moradors = dao.pesquisar();
 		return "consultarmorador.xhtml";
 	}
@@ -40,7 +52,7 @@ public class MoradorControlador implements Serializable {
 
 	public String prepararTelaCadastro() {
 		novaMorador = new Morador();
-		casas = new CasaDao().pesquisar();
+		casas = daoCasa.pesquisar();
 		return "cadastrarmorador.xhtml";
 	}
 
@@ -48,19 +60,14 @@ public class MoradorControlador implements Serializable {
 		if (!validarDados()) {
 			return null;
 		}
-		MoradorDao dao = new MoradorDao();
-		// busca a casa selecionada
-		Casa f = casas.stream()
-				.filter(fam -> fam.getId().equals(idSelecionadoCasa))
-				.findFirst().orElse(null);
+		Casa f = daoCasa.getCasa(idSelecionadoCasa);
 		novaMorador.setCasa(f);
 		dao.cadastrar(novaMorador);
-		new Util().adicionarMensagem("Morador cadastrada com sucesso");
+		new Util().adicionarMensagem("Morador cadastrado com sucesso");
 		return "menuprincipal.xhtml";
 	}
 
 	private boolean validarDados() {
-		MoradorDao dao = new MoradorDao();
 		if (dao.existe(novaMorador)) {
 			new Util().adicionarMensagem("Morador existente!");
 			return false;
@@ -98,6 +105,18 @@ public class MoradorControlador implements Serializable {
 
 	public void setIdSelecionadoCasa(Integer idSelecionadoCasa) {
 		this.idSelecionadoCasa = idSelecionadoCasa;
+	}
+
+	public String getMensagemCasa() {
+		return mensagemCasa;
+	}
+
+	public void setMensagemCasa(String mensagemCasa) {
+		this.mensagemCasa = mensagemCasa;
+	}
+
+	public boolean isMostrarPainel() {
+		return moradors != null && moradors.size() > 0;
 	}
 
 }

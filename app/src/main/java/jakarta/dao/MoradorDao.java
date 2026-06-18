@@ -1,11 +1,16 @@
 package jakarta.dao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.beans.Morador;
+import jakarta.enterprise.context.Dependent;
 
-public class MoradorDao {
+@Dependent
+public class MoradorDao implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private static List<Morador> moradors = new ArrayList<Morador>();
 

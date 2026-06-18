@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.beans.Condominio;
 import jakarta.dao.CondominioDao;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.uteis.Util;
 
@@ -18,14 +19,15 @@ public class CondominioControlador implements Serializable {
 	private Condominio novoCondominio;
 	private List<Condominio> condominios;
 
+	@Inject
+	private CondominioDao dao;
+
 	public void excluir(Condominio r) {
-		CondominioDao dao = new CondominioDao();
 		dao.remover(r);
 		condominios = dao.pesquisar();
 	}
 
 	public String prepararTelaConsulta() {
-		CondominioDao dao = new CondominioDao();
 		this.condominios = dao.pesquisar();
 		return "consultarcondominio.xhtml";
 	}
@@ -43,14 +45,12 @@ public class CondominioControlador implements Serializable {
 		if (!validarDados()) {
 			return null;
 		}
-		CondominioDao dao = new CondominioDao();
 		dao.cadastrar(novoCondominio);
 		new Util().adicionarMensagem("Condominio cadastrado com sucesso");
 		return "menuprincipal.xhtml";
 	}
 
 	private boolean validarDados() {
-		CondominioDao dao = new CondominioDao();
 		if (dao.existe(novoCondominio)) {
 			new Util().adicionarMensagem("Condominio existente!");
 			return false;

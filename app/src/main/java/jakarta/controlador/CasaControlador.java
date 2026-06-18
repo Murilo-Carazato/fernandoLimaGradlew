@@ -8,6 +8,8 @@ import jakarta.beans.Condominio;
 import jakarta.dao.CasaDao;
 import jakarta.dao.CondominioDao;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.event.AjaxBehaviorEvent;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.uteis.Util;
 
@@ -21,15 +23,25 @@ public class CasaControlador implements Serializable {
 	private List<Casa> casas;
 	private List<Condominio> condominios;
 	private Integer idSelecionadoCondominio;
+	private String mensagemCondominio;
+
+	@Inject
+	private CasaDao dao;
+
+	@Inject
+	private CondominioDao daoCondominio;
+
+	public void selecionarCondominio(AjaxBehaviorEvent a) {
+		Condominio p = daoCondominio.getCondominio(idSelecionadoCondominio);
+		mensagemCondominio = "Condomínio: " + (p != null ? p.getNome() : "");
+	}
 
 	public void excluir(Casa f) {
-		CasaDao dao = new CasaDao();
 		dao.remover(f);
 		casas = dao.pesquisar();
 	}
 
 	public String prepararTelaConsulta() {
-		CasaDao dao = new CasaDao();
 		casas = dao.pesquisar();
 		return "consultarcasa.xhtml";
 	}
@@ -40,7 +52,7 @@ public class CasaControlador implements Serializable {
 
 	public String prepararTelaCadastro() {
 		novaCasa = new Casa();
-		condominios = new CondominioDao().pesquisar();
+		condominios = daoCondominio.pesquisar();
 		return "cadastrarcasa.xhtml";
 	}
 
@@ -48,8 +60,7 @@ public class CasaControlador implements Serializable {
 		if (!validarDados()) {
 			return null;
 		}
-		CasaDao dao = new CasaDao();
-		Condominio r = new CondominioDao().getCondominio(idSelecionadoCondominio);
+		Condominio r = daoCondominio.getCondominio(idSelecionadoCondominio);
 		novaCasa.setCondominio(r);
 		dao.cadastrar(novaCasa);
 		new Util().adicionarMensagem("Casa cadastrada com sucesso");
@@ -57,7 +68,6 @@ public class CasaControlador implements Serializable {
 	}
 
 	private boolean validarDados() {
-		CasaDao dao = new CasaDao();
 		if (dao.existe(novaCasa)) {
 			new Util().adicionarMensagem("Casa existente!");
 			return false;
@@ -95,6 +105,18 @@ public class CasaControlador implements Serializable {
 
 	public void setIdSelecionadoCondominio(Integer idSelecionadoCondominio) {
 		this.idSelecionadoCondominio = idSelecionadoCondominio;
+	}
+
+	public String getMensagemCondominio() {
+		return mensagemCondominio;
+	}
+
+	public void setMensagemCondominio(String mensagemCondominio) {
+		this.mensagemCondominio = mensagemCondominio;
+	}
+
+	public boolean isMostrarPainel() {
+		return casas != null && casas.size() > 0;
 	}
 
 }
