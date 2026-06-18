@@ -11,8 +11,8 @@
 			</h:outputLabel>
 		<br></br>
 		<br></br>
-		<h:outputText value="NÃO HÁ DADOS CADASTRADOS" rendered="#{empty moradorControlador.moradors}"></h:outputText>
-		<h:dataTable border="1" value="#{moradorControlador.moradors}" var="e" rendered="#{not empty moradorControlador.moradors}">
+		<h:outputText value="NÃO HÁ DADOS CADASTRADOS" rendered="#{empty moradorControlador.moradores}"></h:outputText>
+		<h:dataTable border="1" value="#{moradorControlador.moradores}" var="e" rendered="#{not empty moradorControlador.moradores}">
 			<h:column id="column1">
 				<f:facet name="header">
 					<h:outputText value="Codigo"></h:outputText>

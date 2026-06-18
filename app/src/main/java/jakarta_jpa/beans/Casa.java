@@ -1,14 +1,22 @@
-package jakarta.beans;
+package jakarta_jpa.beans;
 
 import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
-public class Morador {
+@Entity
+public class Casa {
 	
+	@Id
 	private Integer id;
 	
 	private String nome;
 
-	private Casa casa;
+	@ManyToOne
+	private Condominio condominio;
 
 	@Override
 	public int hashCode() {
@@ -23,16 +31,16 @@ public class Morador {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Morador other = (Morador) obj;
+		Casa other = (Casa) obj;
 		return Objects.equals(id, other.id);
 	}
 
-	public Casa getCasa() {
-		return casa;
+	public Condominio getCondominio() {
+		return condominio;
 	}
 
-	public void setCasa(Casa casa) {
-		this.casa = casa;
+	public void setCondominio(Condominio condominio) {
+		this.condominio = condominio;
 	}
 
 	public Integer getId() {

@@ -1,17 +1,19 @@
-package jakarta.controlador;
+package jakarta_jpa.controlador;
 
 import java.io.Serializable;
 import java.util.List;
 
-import jakarta.beans.Condominio;
-import jakarta.dao.CondominioDao;
+import jakarta_jpa.beans.Condominio;
+import jakarta_jpa.dao.CondominioDao;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.uteis.Util;
+import jakarta.transaction.Transactional;
+import jakarta_jpa.uteis.Util;
 
 @SessionScoped
 @Named
+@Transactional
 public class CondominioControlador implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -21,14 +23,23 @@ public class CondominioControlador implements Serializable {
 
 	@Inject
 	private CondominioDao dao;
-
-	public void excluir(Condominio r) {
-		dao.remover(r);
+	
+	public void excluir(Integer id) {
+		Condominio c = dao.getCondominio(id);
+		dao.remover(c);
 		condominios = dao.pesquisar();
 	}
 
+	public boolean isMostrarDataTable() {
+		return condominios != null && condominios.size() > 0;
+	}
+
+	public boolean isMostrarTitulo() {
+		return condominios == null || condominios.size() == 0;
+	}
+
 	public String prepararTelaConsulta() {
-		this.condominios = dao.pesquisar();
+		condominios = dao.pesquisar();
 		return "consultarcondominio.xhtml";
 	}
 
@@ -38,6 +49,7 @@ public class CondominioControlador implements Serializable {
 
 	public String prepararTelaCadastro() {
 		novoCondominio = new Condominio();
+		// In the professor's code there was novoPais.setMembroOtan("s"); we skip it since Condominio has no such field.
 		return "cadastrarcondominio.xhtml";
 	}
 
@@ -51,10 +63,6 @@ public class CondominioControlador implements Serializable {
 	}
 
 	private boolean validarDados() {
-		if (dao.existe(novoCondominio)) {
-			new Util().adicionarMensagem("Condominio existente!");
-			return false;
-		}
 		return true;
 	}
 
@@ -68,10 +76,6 @@ public class CondominioControlador implements Serializable {
 
 	public List<Condominio> getCondominios() {
 		return condominios;
-	}
-
-	public boolean getExibirTitulo() {
-		return condominios != null && !condominios.isEmpty();
 	}
 
 	public void setCondominios(List<Condominio> condominios) {

@@ -1,9 +1,15 @@
-package jakarta.beans;
+package jakarta_jpa.beans;
 
 import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Condominio {
 	
+	@Id
 	private Integer id;
 	
 	private String nome;

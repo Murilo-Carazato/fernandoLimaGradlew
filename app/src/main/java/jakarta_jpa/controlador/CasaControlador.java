@@ -1,17 +1,17 @@
-package jakarta.controlador;
+package jakarta_jpa.controlador;
 
 import java.io.Serializable;
 import java.util.List;
 
-import jakarta.beans.Casa;
-import jakarta.beans.Condominio;
-import jakarta.dao.CasaDao;
-import jakarta.dao.CondominioDao;
+import jakarta_jpa.beans.Casa;
+import jakarta_jpa.beans.Condominio;
+import jakarta_jpa.dao.CasaDao;
+import jakarta_jpa.dao.CondominioDao;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.event.AjaxBehaviorEvent;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.uteis.Util;
+import jakarta_jpa.uteis.Util;
 
 @SessionScoped
 @Named
@@ -23,21 +23,15 @@ public class CasaControlador implements Serializable {
 	private List<Casa> casas;
 	private List<Condominio> condominios;
 	private Integer idSelecionadoCondominio;
-	private String mensagemCondominio;
-
+	
 	@Inject
 	private CasaDao dao;
-
+	
 	@Inject
 	private CondominioDao daoCondominio;
-
-	public void selecionarCondominio(AjaxBehaviorEvent a) {
-		Condominio p = daoCondominio.getCondominio(idSelecionadoCondominio);
-		mensagemCondominio = "Condomínio: " + (p != null ? p.getNome() : "");
-	}
-
-	public void excluir(Casa f) {
-		dao.remover(f);
+	
+	public void excluir(Casa c) {
+		dao.remover(c);
 		casas = dao.pesquisar();
 	}
 
@@ -50,6 +44,10 @@ public class CasaControlador implements Serializable {
 		return "menuprincipal.xhtml";
 	}
 
+	public boolean isMostrarPainel() {
+		return casas != null && casas.size() > 0;
+	}
+
 	public String prepararTelaCadastro() {
 		novaCasa = new Casa();
 		condominios = daoCondominio.pesquisar();
@@ -60,8 +58,8 @@ public class CasaControlador implements Serializable {
 		if (!validarDados()) {
 			return null;
 		}
-		Condominio r = daoCondominio.getCondominio(idSelecionadoCondominio);
-		novaCasa.setCondominio(r);
+		Condominio c = daoCondominio.getCondominio(idSelecionadoCondominio);
+		novaCasa.setCondominio(c);
 		dao.cadastrar(novaCasa);
 		new Util().adicionarMensagem("Casa cadastrada com sucesso");
 		return "menuprincipal.xhtml";
@@ -105,18 +103,6 @@ public class CasaControlador implements Serializable {
 
 	public void setIdSelecionadoCondominio(Integer idSelecionadoCondominio) {
 		this.idSelecionadoCondominio = idSelecionadoCondominio;
-	}
-
-	public String getMensagemCondominio() {
-		return mensagemCondominio;
-	}
-
-	public void setMensagemCondominio(String mensagemCondominio) {
-		this.mensagemCondominio = mensagemCondominio;
-	}
-
-	public boolean isMostrarPainel() {
-		return casas != null && casas.size() > 0;
 	}
 
 }

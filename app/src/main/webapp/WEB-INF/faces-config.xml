@@ -6,7 +6,7 @@
 	version="4.0">
 
 	<factory>
-		<exception-handler-factory>jakarta.uteis.CustomExceptionHandlerFactory</exception-handler-factory>
+		<exception-handler-factory>jakarta_jpa.uteis.TratadorErroFactory</exception-handler-factory>
 	</factory>
 
 </faces-config>
